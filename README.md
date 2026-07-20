@@ -93,8 +93,10 @@ environment states, not just inferred from reading the code).
 - Bland JM, Altman DG (1986). Statistical methods for assessing agreement
   between two methods of clinical measurement. Lancet 327:307-310.
   (Source of the canonical PEFR validation dataset.)
-- Signorell A (2024). DescTools: Tools for Descriptive Statistics. R
-  package version 0.99.54. (Reference implementation for `CompareR`.)
+- Signorell A (2025). DescTools: Tools for Descriptive Statistics. R
+  package version 0.99.60. (Reference implementation for `CompareR`;
+  version as verified installed and tested against on this machine,
+  2026-07-20.)
 
 ## Origin
 
