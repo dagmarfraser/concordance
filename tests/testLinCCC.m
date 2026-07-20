@@ -7,7 +7,13 @@ classdef testLinCCC < matlab.unittest.TestCase
 % both CompareR branches (available and degraded-mode).
 
     properties (Constant)
-        LegacyFunctionsDir = "/Users/dsfraser/Dropbox/Brain2Bee/PowerLawSimulationPreReg/src/functions"
+        % No hardcoded personal path here (see CHANGELOG.md 2026-07-20 fix) --
+        % set CONCORDANCE_LEGACY_DIR as an environment variable if you want
+        % to opt in to the source-equivalence check against the original
+        % linCCC_v001.m on your own machine. Unset (the case for every
+        % File Exchange/GitHub user, and previously silently true on every
+        % machine here too, since the old hardcoded path was already
+        % stale) -- the test below filters cleanly, by design.
     end
 
     methods (TestClassSetup)
@@ -15,9 +21,11 @@ classdef testLinCCC < matlab.unittest.TestCase
             toolboxDir = fullfile(fileparts(mfilename("fullpath")), "..", "toolbox");
             addpath(toolboxDir);
             testCase.addTeardown(@() rmpath(toolboxDir));
-            if isfolder(testCase.LegacyFunctionsDir)
-                addpath(testCase.LegacyFunctionsDir);
-                testCase.addTeardown(@() rmpath(testCase.LegacyFunctionsDir));
+
+            legacyDir = string(getenv("CONCORDANCE_LEGACY_DIR"));
+            if strlength(legacyDir) > 0 && isfolder(legacyDir)
+                addpath(legacyDir);
+                testCase.addTeardown(@() rmpath(legacyDir));
             end
         end
     end

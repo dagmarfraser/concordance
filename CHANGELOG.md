@@ -2,6 +2,23 @@
 
 `concordance` follows semantic versioning.
 
+## Unreleased
+
+- **Fixed:** `tests/testLinCCC.m` had a hardcoded personal absolute path
+  (`LegacyFunctionsDir`, pointing at a specific machine's Dropbox
+  folder) for its optional source-equivalence check against the
+  original `linCCC_v001.m`. This should never have shipped publicly --
+  it exposed a personal folder structure/username for no functional
+  benefit, and was already stale relative to the machine it was written
+  on (the test had accordingly been silently filtering on every machine
+  in every session since v1.0.0, never actually verified). Replaced with
+  an opt-in `CONCORDANCE_LEGACY_DIR` environment variable: unset (the
+  default for everyone, including now-current project machines) filters
+  cleanly with the same clear message as before; set to a real path, the
+  test now genuinely runs and has been confirmed passing (10/10, bit-
+  identical match to `linCCC_v001.m` across all 11 output fields) for
+  the first time since extraction.
+
 ## v1.0.0 -- 2026-07-02
 
 First release. One function, delivered from `PowerLawSimulationPreReg`
