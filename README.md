@@ -1,13 +1,14 @@
 # concordance
 
 A small, standalone MATLAB toolbox for Lin's Concordance Correlation
-Coefficient (CCC) -- a measure of agreement between two continuous
-variables, distinct from and stricter than Pearson correlation. Extracted
-and generalised from an internal function of the `PowerLawSimulationPreReg`
-project (University of Birmingham, School of Psychology). `concordance`
-itself has no connection to that project's power-law or kinematics work --
-it's a general-purpose agreement statistic, offered here as a standalone,
-dependency-light utility.
+Coefficient (CCC): a measure of agreement between two continuous
+variables, distinct from (and stricter than) Pearson correlation -- two
+variables can correlate perfectly while disagreeing completely, and CCC
+catches that where r doesn't.
+
+Originally written for a kinematics research project
+([velocity-curvature-power-law-simulation](https://github.com/dagmarfraser/velocity-curvature-power-law-simulation)),
+then generalised into this standalone, dependency-light package.
 
 **Status:** v1.0.0 (2026-07-02).
 
@@ -97,10 +98,12 @@ environment states, not just inferred from reading the code).
 
 ## Origin
 
-Extracted from `src/functions/linCCC_v001.m` in `PowerLawSimulationPreReg`;
-each extraction/generalisation change is documented in `linCCC.m`'s own
+Extracted and generalised from `linCCC_v001.m`, an internal function of
+[velocity-curvature-power-law-simulation](https://github.com/dagmarfraser/velocity-curvature-power-law-simulation)
+(University of Birmingham, School of Psychology). Each
+extraction/generalisation change is documented in `linCCC.m`'s own
 docstring and in `CHANGELOG.md`. `concordance` has no dependency back on
-`PowerLawSimulationPreReg`.
+that project.
 
 ## License
 
