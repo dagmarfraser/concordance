@@ -4,7 +4,7 @@ A small, standalone MATLAB toolbox for Lin's Concordance Correlation
 Coefficient (CCC): a measure of agreement between two continuous
 variables, distinct from (and stricter than) Pearson correlation -- two
 variables can correlate perfectly while disagreeing completely, and CCC
-catches that where r doesn't.
+catches that where Pearson's r doesn't.
 
 Originally written for a kinematics research project
 ([velocity-curvature-power-law-simulation](https://github.com/dagmarfraser/velocity-curvature-power-law-simulation)),
