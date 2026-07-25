@@ -45,8 +45,8 @@ fprintf('CCC = %.4f\n', result.ccc);
 linCCC(methodA, methodB);
 ```
 
-See `doc/GettingStarted.mlx` for a full tour, and
-`examples/AgreementAnalysisWorkedExample.mlx` for a realistic
+See `doc/GettingStarted.m` for a full tour, and
+`examples/AgreementAnalysisWorkedExample.m` for a realistic
 method-comparison scenario distinguishing good agreement from systematic
 bias and proportional (scale) bias.
 
@@ -57,7 +57,7 @@ blind to systematic offsets or scale differences. Two measurement methods
 can correlate at r=0.99 while one consistently reads higher than the
 other; Pearson won't flag this, but CCC will, because CCC specifically
 penalises deviation from the 45-degree identity line, not just linear
-association. See `doc/GettingStarted.mlx` for a worked demonstration of
+association. See `doc/GettingStarted.m` for a worked demonstration of
 exactly this.
 
 ## Validation
@@ -66,7 +66,7 @@ Cross-validated against R's `DescTools::CCC()` across 7 test cases
 (|MATLAB - R| < 0.001 for every case), including the canonical
 Bland-Altman (1986) Peak Expiratory Flow Rate dataset -- the same worked
 example used in `DescTools`' and `epiR`'s own documentation. See
-`doc/WhyValidatedAgainstR.mlx` for the full comparison, reproducible live
+`doc/WhyValidatedAgainstR.m` for the full comparison, reproducible live
 if you have R installed.
 
 ## Testing
